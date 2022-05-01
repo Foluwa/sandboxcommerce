@@ -28,7 +28,7 @@ function Dashboard({ history }) {
 
 
   return (
-    <MainScreen title={`Welcome ${capitalizeChar(userInfo && userInfo.name)}..`}>
+    <MainScreen title={`Welcome ${userInfo && userInfo.name}..`}>
       {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
       {loading === true ? <Loading /> :
         <Table>
