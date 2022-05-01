@@ -118,11 +118,9 @@ export const updateProfile = (user) => async (dispatch, getState) => {
 
 export const fetchUsers = () => async (dispatch) => {
   try {
-    
-    console.log("Fetching users...");
+  
     dispatch({ type: USERS_FETCH_REQUEST });
     const { data } = await axios.get("/api/users/fetch");
-    console.log({data});
     dispatch({ type: USERS_FETCH_SUCCESS, payload: data });
 
   } catch (error) {

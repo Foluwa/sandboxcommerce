@@ -1,23 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
-import "./ProfileScreen.css";
 import { useDispatch, useSelector } from "react-redux";
 import { updateProfile } from "../../actions/userActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
+import "./ProfileScreen.css";
 
-const ProfileScreen = ({ location, history }) => {
+const ProfileScreen = ({ history }) => {
+  const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
-
   const [pic, setPic] = useState();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [picMessage, setPicMessage] = useState();
-
-  const dispatch = useDispatch();
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
@@ -41,9 +39,6 @@ const ProfileScreen = ({ location, history }) => {
     if (pics.type === "image/jpeg" || pics.type === "image/png") {
       const data = new FormData();
       data.append("file", pics);
-      // data.append("upload_preset", "notezipper");
-      // data.append("cloud_name", "piyushproj");
-
       data.append("upload_preset", "ak0lno32");
       data.append("cloud_name", "evolve-hostelier");
       fetch("https://api.cloudinary.com/v1_1/evolve-hostelier/image/upload", {
@@ -52,9 +47,7 @@ const ProfileScreen = ({ location, history }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log({ data });
           setPic(data.url.toString());
-          console.log(pic);
         })
         .catch((err) => {
           console.log(err);
@@ -67,7 +60,7 @@ const ProfileScreen = ({ location, history }) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    dispatch(updateProfile({ name, email, password, pic,description }));
+    dispatch(updateProfile({ name, email, password, pic, description }));
   };
 
   return (
@@ -141,7 +134,7 @@ const ProfileScreen = ({ location, history }) => {
                   custom
                 />
               </Form.Group>
-              <Button type="submit" varient="primary">
+              <Button type="submit" className="btn-lg" varient="primary">
                 Update
               </Button>
             </Form>

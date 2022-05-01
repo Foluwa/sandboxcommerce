@@ -6,9 +6,7 @@ import generateToken from "../utils/generateToken.js";
 //@route           POST /api/users/login
 //@access          Public
 const authUser = asyncHandler(async (req, res) => {
-  console.log('I GOT HERE!!');
   const { email, password } = req.body;
-
   const user = await User.findOne({ email });
 
   if (user && (await user.matchPassword(password))) {
@@ -101,14 +99,9 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 // @route   GET /api/users/profile
 // @access  Private
 const fetchProfile = asyncHandler(async (req, res) => {
-  console.log('fetchProfile was called');
   const users = await User.find();
-  console.log({users});
-
   if (users) {
-
-    console.log({users});
-
+    // console.log({users});
     res.json({
       users
     });

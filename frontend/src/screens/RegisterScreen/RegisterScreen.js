@@ -36,9 +36,6 @@ function RegisterScreen({ history }) {
     if (pics.type === "image/jpeg" || pics.type === "image/png") {
       const data = new FormData();
       data.append("file", pics);
-      // data.append("upload_preset", "notezipper");
-      // data.append("cloud_name", "piyushproj");
-      // fetch("https://api.cloudinary.com/v1_1/piyushproj/image/upload", {
       data.append("upload_preset", "ak0lno32");
       data.append("cloud_name", "evolve-hostelier");
       fetch("https://api.cloudinary.com/v1_1/evolve-hostelier/image/upload", {
@@ -47,11 +44,9 @@ function RegisterScreen({ history }) {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log({data});
           setPic(data.url.toString());
         })
         .catch((err) => {
-          console.log(err);
         });
     } else {
       return setPicMessage("Please Select an Image");
