@@ -7,7 +7,6 @@ import ProfileScreen from "./screens/ProfileScreen/ProfileScreen";
 import NotFound from "./screens/NotFound/NotFound";
 
 const App = () => {
-
   return (
     <Router>
       <Header />
