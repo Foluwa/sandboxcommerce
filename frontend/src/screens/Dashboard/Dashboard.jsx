@@ -7,7 +7,7 @@ import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 import { convertDate,capitalizeChar } from '../../helpers/utility';
 
-function MyNotes({ history }) {
+function Dashboard({ history }) {
   const dispatch = useDispatch();
   const usersList = useSelector((state) => state.fetchUsers);
   const { loading, users, error } = usersList;
@@ -52,4 +52,4 @@ function MyNotes({ history }) {
   );
 }
 
-export default MyNotes;
+export default Dashboard;

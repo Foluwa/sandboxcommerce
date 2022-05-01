@@ -12,12 +12,14 @@ const App = () => {
     <Router>
       <Header />
       <main className="App">
-        <Route path="/" component={LoginScreen} exact />
-        <Route path="/login" component={LoginScreen} />
-        <Route path="/register" component={RegisterScreen} />
-        <Route path="/dashboard" component={({ history }) => (<Dashboard history={history} /> )} />
-        <Route path="/profile" component={ProfileScreen} />
-        <Route path="*" component={NotFound} />
+        <Route exact path="/" component={LoginScreen} />
+        <Route exact path="/login" component={LoginScreen} />
+        <Route exact path="/register" component={RegisterScreen} />
+        {/* <Route exact path="/dashboard" component={() => (<Dashboard /> )} /> */}
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/profile" component={ProfileScreen} />
+        {/* <Route path="*" component={NotFound} exact /> */}
+        <Route exact path="*" component={NotFound} />
       </main>
     </Router>
   );
