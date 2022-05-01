@@ -4,6 +4,7 @@ import Dashboard from "./screens/Dashboard/Dashboard";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen/RegisterScreen";
 import ProfileScreen from "./screens/ProfileScreen/ProfileScreen";
+import NotFound from "./screens/NotFound/NotFound";
 
 const App = () => {
 
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/register" component={RegisterScreen} />
         <Route path="/dashboard" component={({ history }) => (<Dashboard history={history} /> )} />
         <Route path="/profile" component={ProfileScreen} />
+        <Route path="*" component={NotFound} />
       </main>
     </Router>
   );
