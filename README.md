@@ -14,3 +14,5 @@ Backend - Express.js
 ```
 
 Live demo [https://sandboxcommerce.herokuapp.com](https://sandboxcommerce.herokuapp.com)
+email: `solo@gmail.com`
+password: `solo`

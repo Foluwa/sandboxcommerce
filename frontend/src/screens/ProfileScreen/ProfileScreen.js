@@ -53,7 +53,7 @@ const ProfileScreen = ({ history }) => {
           console.log(err);
         });
     } else {
-      return setPicMessage("Please Select an Image");
+      return setPicMessage("The selected file is not an Image");
     }
   };
 
