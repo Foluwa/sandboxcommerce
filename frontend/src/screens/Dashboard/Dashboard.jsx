@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 import { Table } from "react-bootstrap";
 
-import { useAuth0 } from "@auth0/auth0-react";
-import JSONPretty from 'react-json-pretty';
-
 import MainScreen from "../../components/MainScreen";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../../actions/userActions";
@@ -12,8 +9,6 @@ import ErrorMessage from "../../components/ErrorMessage";
 import { convertDate, capitalizeChar } from '../../helpers/utility';
 
 const Dashboard = ({ history }) => {
-  const { user, isAuthenticated } = useAuth0();
-  console.log({user});
 
   const dispatch = useDispatch();
   const usersList = useSelector((state) => state.fetchUsers);
@@ -37,17 +32,6 @@ const Dashboard = ({ history }) => {
   return (
     <MainScreen title={`Welcome ${userInfo && userInfo.name}..`}>
       <div className="container" style={{ margin: '20px' }}>
-
-        {isAuthenticated && (
-          <div>
-            <img src={user.picture} alt={user.name} />
-            <h2>{user.name}</h2>
-            <p>{user.email}</p>
-            <JSONPretty data={user} />
-            {/* {JSON.stringify(user, null, 2)} */}
-          </div>
-        )}
-
         {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
         {loading === true ? <Loading /> :
           <div class="table-responsive">

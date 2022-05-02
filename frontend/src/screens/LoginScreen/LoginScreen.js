@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useAuth0 } from '@auth0/auth0-react';
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -10,9 +9,6 @@ import MainScreen from "../../components/MainScreen";
 import "./LoginScreen.css";
 
 function LoginScreen({ history }) {
-  const { loginWithRedirect } = useAuth0();
-
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -61,14 +57,14 @@ function LoginScreen({ history }) {
           <Button variant="primary" className="btn btn-primary btn-lg btn-block" type="submit">
             Signin
           </Button>
-          <br />
+          {/* <br />
           <p style={{ textAlign: 'center' }}>
             <span style={{ fontSize: '20px' }}>OR</span>
             <hr />
             {<Button className="btn btn-primary btn-lg" onClick={() => loginWithRedirect()}>
               Log In with Auth0
             </Button>}
-          </p>
+          </p> */}
 
         </Form>
         <Row className="py-3">
