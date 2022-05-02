@@ -4,8 +4,4 @@ Setup
 Frontend - React.js
 Backend - Express.js
 
-cd into the project directory and run
-
-`
-    npm install
-`
+Live demo [https://sandboxcommerce.herokuapp.com](https://sandboxcommerce.herokuapp.com)
