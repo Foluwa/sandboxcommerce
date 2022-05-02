@@ -16,7 +16,7 @@ const App = () => {
         <Route exact path="/register" component={RegisterScreen} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/profile" component={ProfileScreen} />
-        {/* <Route path="*" component={NotFound} exact /> */}
+        {/* <Route path="*" component={NotFound} /> */}
       </main>
     </Router>
   );

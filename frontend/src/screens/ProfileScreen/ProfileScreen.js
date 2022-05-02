@@ -134,7 +134,7 @@ const ProfileScreen = ({ history }) => {
                   custom
                 />
               </Form.Group>
-              <Button type="submit" className="btn-lg" varient="primary">
+              <Button type="submit" className="btn-lg btn-block" varient="primary">
                 Update
               </Button>
             </Form>

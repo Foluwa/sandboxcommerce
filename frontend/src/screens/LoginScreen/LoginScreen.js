@@ -29,7 +29,7 @@ function LoginScreen({ history }) {
   };
 
   return (
-    <MainScreen title="LOGIN">
+    <MainScreen title="Sign In">
       <div className="loginContainer">
         {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
         {loading && <Loading />}
@@ -54,13 +54,13 @@ function LoginScreen({ history }) {
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit">
-            Submit
+          <Button variant="primary" className="btn-lg btn-block" type="submit">
+            Signin
           </Button>
         </Form>
         <Row className="py-3">
           <Col>
-            New Customer ? <Link to="/register">Register Here</Link>
+            New User ? <Link to="/register">Register Here</Link>
           </Col>
         </Row>
       </div>

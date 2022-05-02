@@ -56,8 +56,6 @@ export const userUpdateReducer = (state = {}, action) => {
   }
 };
 
-
-// export const noteListReducer = (state = { notes: [] }, action) => {
 export const fetchUsersReducers = (state = {}, action) => {
   switch (action.type) {
     case USERS_FETCH_REQUEST:

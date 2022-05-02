@@ -68,7 +68,7 @@ function RegisterScreen({ history }) {
   };
 
   return (
-    <MainScreen title="REGISTER">
+    <MainScreen title="REGISTERATION">
       <div className="loginContainer">
         {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
         {message && <ErrorMessage variant="danger">{message}</ErrorMessage>}
@@ -138,7 +138,7 @@ function RegisterScreen({ history }) {
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button variant="primary" className="btn-lg btn-block" type="submit">
             Register
           </Button>
         </Form>
