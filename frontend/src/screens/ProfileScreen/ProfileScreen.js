@@ -65,7 +65,7 @@ const ProfileScreen = ({ history }) => {
 
   return (
     <MainScreen title="EDIT PROFILE">
-      <div style={{margin: '10px'}}>
+      <div style={{margin: '20px'}}>
         <Row className="profileContainer">
           <Col md={6}>
             <Form onSubmit={submitHandler}>

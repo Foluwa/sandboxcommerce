@@ -29,7 +29,7 @@ const Dashboard = ({ history }) => {
 
   return (
     <MainScreen title={`Welcome ${userInfo && userInfo.name}..`}>
-      <div className="container" style={{margin: '10px'}}>
+      <div className="container" style={{margin: '20px'}}>
 
       {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
       {loading === true ? <Loading /> :
