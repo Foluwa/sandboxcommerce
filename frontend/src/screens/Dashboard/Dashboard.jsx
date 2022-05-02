@@ -29,9 +29,12 @@ const Dashboard = ({ history }) => {
 
   return (
     <MainScreen title={`Welcome ${userInfo && userInfo.name}..`}>
+      <div className="container" style={{margin: '10px'}}>
+
       {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
       {loading === true ? <Loading /> :
-        <Table>
+      <div class="table-responsive">
+        <Table class="table">
           <thead class="thead-dark" >
             <tr>
               <th>#</th>
@@ -47,7 +50,11 @@ const Dashboard = ({ history }) => {
             }
             )}
           </tbody>
-        </Table>}
+        </Table>
+        </div>
+        }
+
+      </div>
     </MainScreen>
   );
 }

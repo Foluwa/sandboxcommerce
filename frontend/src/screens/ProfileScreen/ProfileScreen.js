@@ -65,7 +65,7 @@ const ProfileScreen = ({ history }) => {
 
   return (
     <MainScreen title="EDIT PROFILE">
-      <div>
+      <div style={{margin: '10px'}}>
         <Row className="profileContainer">
           <Col md={6}>
             <Form onSubmit={submitHandler}>
@@ -134,7 +134,7 @@ const ProfileScreen = ({ history }) => {
                   custom
                 />
               </Form.Group>
-              <Button type="submit" className="btn-lg" varient="primary">
+              <Button type="submit" className="btn-lg btn-block" varient="primary">
                 Update
               </Button>
             </Form>
