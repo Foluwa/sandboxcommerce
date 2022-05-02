@@ -16,10 +16,12 @@ function Header() {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
-  const { logout, isAuthenticated } = useAuth0();
+  // const { logout, isAuthenticated } = useAuth0();
+  const { logout } = useAuth0();
 
   const logoutHandler = () => {
-    logout();
+    // logout();
+    logout({ returnTo: window.location.origin })
     dispatch(userLogout());
   };
 

@@ -13,6 +13,7 @@ import { convertDate, capitalizeChar } from '../../helpers/utility';
 
 const Dashboard = ({ history }) => {
   const { user, isAuthenticated } = useAuth0();
+  console.log({user});
 
   const dispatch = useDispatch();
   const usersList = useSelector((state) => state.fetchUsers);

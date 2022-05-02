@@ -1,5 +1,3 @@
-import {Auth0Lock} from 'auth0-lock';
-
 import {
   USER_LOGIN_FAIL,
   USER_LOGIN_REQUEST,
@@ -14,11 +12,7 @@ import {
 
   USERS_FETCH_REQUEST,
   USERS_FETCH_SUCCESS,
-  USERS_FETCH_FAIL,
-
-  SHOW_LOCK,
-  LOCK_SUCCESS,
-  LOCK_ERROR
+  USERS_FETCH_FAIL
 } from "../constants/userConstants";
 import axios from "axios";
 
@@ -139,55 +133,4 @@ export const fetchUsers = () => async (dispatch) => {
     });
   }
 };
-
-
-// OAUTH
-
-export const showLock =() => {
-  return {
-    type: SHOW_LOCK
-  }
-};
-
-export const lockSuccess =(profile, token) => {
-  return {
-    type: LOCK_SUCCESS,
-    profile,
-    token
-  }
-};
-
-export const lockError =(err) => {
-  return {
-    type: LOCK_ERROR,
-    err
-  }
-};
-
-const lock = new Auth0Lock('uP2jbsdQ1lhbxUht7Kdn6reYbFijRF5Z', 'errandx.auth0.com');
-
-export function oauthLogin() {
-  // display lock widget
-  return dispatch => {
-    lock.show();
-  }
-}
-// Listen to authenticated event and get the profile of the user
-export function doAuthentication() {
-  return dispatch => {
-    lock.on("authenticated", function(authResult) {
-          lock.getProfile(authResult.idToken, function(error, profile) {
-
-            if (error) {
-              // handle error
-              return dispatch(lockError(error))
-            }
-
-            localStorage.setItem('profile', JSON.stringify(profile))
-            localStorage.setItem('id_token', authResult.idToken)
-            return dispatch(lockSuccess(profile))
-          });
-    });
-  }
-}
 

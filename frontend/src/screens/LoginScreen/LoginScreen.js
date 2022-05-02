@@ -5,12 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
-import { login, oauthLogin } from "../../actions/userActions";
+import { login } from "../../actions/userActions";
 import MainScreen from "../../components/MainScreen";
 import "./LoginScreen.css";
 
 function LoginScreen({ history }) {
-  const { loginWithRedirect, isAuthenticated } = useAuth0();
+  const { loginWithRedirect } = useAuth0();
 
 
   const [email, setEmail] = useState("");
@@ -65,16 +65,9 @@ function LoginScreen({ history }) {
           <p style={{ textAlign: 'center' }}>
             <span style={{ fontSize: '20px' }}>OR</span>
             <hr />
-            {/* {!isAuthenticated && (
-              <Button className="btn btn-primary btn-lg" onClick={() => loginWithRedirect()}>
-                Log In with Auth0
-              </Button>)} */}
-              {/*  // <Button className="btn btn-primary btn-lg" onClick={(e) => doAuthentication(e)}> */}
-            {
-              <Button className="btn btn-primary btn-lg" onClick={(e) => oauthLogin(e)}>
-             
-                Log In with Auth0
-              </Button>}
+            {<Button className="btn btn-primary btn-lg" onClick={() => loginWithRedirect()}>
+              Log In with Auth0
+            </Button>}
           </p>
 
         </Form>
