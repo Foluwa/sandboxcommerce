@@ -13,6 +13,19 @@ Backend - Express.js
     Then run 'npm run dev'
 ```
 
+
+### Components
+```
+    Redux - State management
+    JWT - Authentication
+    Cloudinary - Image Upload
+    MongoDB - Database
+    Heroku - Hosting
+```
+
 Live demo [https://sandboxcommerce.herokuapp.com](https://sandboxcommerce.herokuapp.com)
-email: `solo@gmail.com`
-password: `solo`
+```
+    email: solo@gmail.com
+    password: solo
+
+```
