@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
-import { login } from "../../actions/userActions";
+import { login, oauthLogin } from "../../actions/userActions";
 import MainScreen from "../../components/MainScreen";
 import "./LoginScreen.css";
 
@@ -65,10 +65,16 @@ function LoginScreen({ history }) {
           <p style={{ textAlign: 'center' }}>
             <span style={{ fontSize: '20px' }}>OR</span>
             <hr />
-            {!isAuthenticated && (
+            {/* {!isAuthenticated && (
               <Button className="btn btn-primary btn-lg" onClick={() => loginWithRedirect()}>
                 Log In with Auth0
-              </Button>)}
+              </Button>)} */}
+              {/*  // <Button className="btn btn-primary btn-lg" onClick={(e) => doAuthentication(e)}> */}
+            {
+              <Button className="btn btn-primary btn-lg" onClick={(e) => oauthLogin(e)}>
+             
+                Log In with Auth0
+              </Button>}
           </p>
 
         </Form>
