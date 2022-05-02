@@ -54,7 +54,7 @@ function LoginScreen({ history }) {
             />
           </Form.Group>
 
-          <Button variant="primary" className="btn-lg btn-block" type="submit">
+          <Button variant="primary" className="btn btn-primary btn-lg btn-block" type="submit">
             Signin
           </Button>
         </Form>

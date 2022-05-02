@@ -4,7 +4,7 @@ import Dashboard from "./screens/Dashboard/Dashboard";
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen/RegisterScreen";
 import ProfileScreen from "./screens/ProfileScreen/ProfileScreen";
-import NotFound from "./screens/NotFound/NotFound";
+// import NotFound from "./screens/NotFound/NotFound";
 
 const App = () => {
   return (

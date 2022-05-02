@@ -32,7 +32,7 @@ const Dashboard = ({ history }) => {
       {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
       {loading === true ? <Loading /> :
         <Table>
-          <thead>
+          <thead class="thead-dark" >
             <tr>
               <th>#</th>
               <th>Name</th>
